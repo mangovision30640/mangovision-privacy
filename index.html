@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politique de Confidentialité – MangoVision</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  :root {
+    --bg-dark: #0F0F11;
+    --bg-card: #1A1A1F;
+    --bg-surface: #2A2A30;
+    --peach: #FF8A00;
+    --purple: #A040FF;
+    --text: #FFFFFF;
+    --text-muted: #8B8B95;
+    --border: #3A3A40;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text);
+    background: var(--bg-dark);
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 2rem;
+  }
+
+  .logo {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, var(--peach), var(--purple));
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 28px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  header p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .highlight-box {
+    background: rgba(255, 138, 0, 0.1);
+    border: 1px solid rgba(255, 138, 0, 0.3);
+    border-left: 4px solid var(--peach);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+    color: var(--peach);
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 2.5rem;
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  h2 .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px; height: 24px;
+    background: var(--peach);
+    color: var(--bg-dark);
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  p { margin-bottom: 0.75rem; color: var(--text-muted); }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0.75rem;
+  }
+
+  ul li {
+    color: var(--text-muted);
+    padding: 0.2rem 0 0.2rem 1.4rem;
+    position: relative;
+  }
+
+  ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--peach);
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  ul.cross li::before { content: '✗'; color: #FF4444; }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.75rem 0 1rem;
+    font-size: 0.9rem;
+  }
+
+  .data-table th {
+    background: var(--bg-surface);
+    color: var(--text);
+    text-align: left;
+    padding: 0.6rem 0.85rem;
+    font-weight: 600;
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .data-table td {
+    padding: 0.6rem 0.85rem;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .data-table tr:last-child td { border-bottom: none; }
+
+  .badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 1px 7px;
+    border-radius: 20px;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+
+  .badge-green { background: rgba(255, 138, 0, 0.15); color: var(--peach); }
+  .badge-gray { background: var(--bg-surface); color: var(--text-muted); }
+
+  .contact-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .contact-box a { color: var(--peach); font-weight: 600; }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 1.25rem 1rem 3rem; }
+    h1 { font-size: 1.2rem; }
+    .data-table { font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🥭</div>
+  <div>
+    <h1>Politique de Confidentialité</h1>
+    <p>MangoVision – Media Player · Dernière mise à jour : 20 juillet 2026</p>
+  </div>
+</header>
+
+<div class="highlight-box">
+  <strong>En résumé :</strong> MangoVision est un lecteur multimédia. Nous ne collectons, ne stockons, ni ne partageons aucune donnée personnelle sur nos serveurs. Toutes vos informations de connexion restent exclusivement sur votre appareil.
+</div>
+
+<h2><span class="num">1</span> Qui sommes-nous</h2>
+<p>MangoVision est une application Android TV développée et maintenue par un développeur indépendant. L'application est un lecteur multimédia permettant à ses utilisateurs de se connecter à leurs propres services de streaming via les protocoles Xtream Codes et M3U.</p>
+<p>MangoVision ne fournit aucun contenu, aucune chaîne de télévision et aucun service de streaming. L'utilisateur est seul responsable des abonnements auxquels il se connecte.</p>
+
+<h2><span class="num">2</span> Données collectées</h2>
+<p>MangoVision <strong>ne collecte aucune donnée personnelle</strong>. Nous n'utilisons ni serveurs d'analyse, ni traqueurs publicitaires, ni outils de télémétrie.</p>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Type de données</th>
+      <th>Stockage</th>
+      <th>Partagé avec des tiers</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>URL du serveur, identifiant, mot de passe</td>
+      <td><span class="badge badge-green">Appareil local uniquement</span></td>
+      <td><span class="badge badge-gray">Jamais</span></td>
+    </tr>
+    <tr>
+      <td>Préférences de l'application (catégories, thème, langue)</td>
+      <td><span class="badge badge-green">Appareil local uniquement</span></td>
+      <td><span class="badge badge-gray">Jamais</span></td>
+    </tr>
+    <tr>
+      <td>Positions de reprise de lecture (VOD / Séries)</td>
+      <td><span class="badge badge-green">Appareil local uniquement</span></td>
+      <td><span class="badge badge-gray">Jamais</span></td>
+    </tr>
+    <tr>
+      <td>Données d'utilisation ou statistiques</td>
+      <td colspan="2"><span class="badge badge-gray">Non collectées</span></td>
+    </tr>
+    <tr>
+      <td>Données de localisation</td>
+      <td colspan="2"><span class="badge badge-gray">Non collectées</span></td>
+    </tr>
+    <tr>
+      <td>Identifiants publicitaires</td>
+      <td colspan="2"><span class="badge badge-gray">Non utilisés</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2><span class="num">3</span> Comment les données sont utilisées</h2>
+<p>Les données saisies dans l'application (URL, identifiant, mot de passe) sont utilisées exclusivement pour :</p>
+<ul>
+  <li>Établir la connexion à votre service de streaming personnel</li>
+  <li>Récupérer la liste des chaînes, films et séries disponibles sur votre abonnement</li>
+  <li>Afficher le guide des programmes (EPG)</li>
+  <li>Mémoriser votre position de lecture pour la reprise automatique</li>
+</ul>
+<p>Ces données ne quittent jamais votre appareil, sauf pour communiquer directement avec le serveur de streaming que <em>vous</em> avez configuré.</p>
+
+<h2><span class="num">4</span> Ce que nous ne faisons pas</h2>
+<ul class="cross">
+  <li>Nous ne transmettons aucune donnée à nos serveurs (nous n'en avons pas)</li>
+  <li>Nous ne vendons aucune donnée à des tiers</li>
+  <li>Nous n'affichons pas de publicités</li>
+  <li>Nous ne suivons pas votre comportement de visionnage</li>
+  <li>Nous n'accédons pas à vos contacts, photos ou fichiers</li>
+  <li>Nous n'utilisons pas de cookies</li>
+</ul>
+
+<h2><span class="num">5</span> Permissions requises</h2>
+<p>MangoVision ne demande que les permissions strictement nécessaires à son fonctionnement :</p>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Permission</th>
+      <th>Utilisation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>INTERNET</td>
+      <td>Connexion au serveur de streaming configuré par l'utilisateur</td>
+    </tr>
+    <tr>
+      <td>ACCESS_NETWORK_STATE</td>
+      <td>Vérification de la disponibilité du réseau avant lecture</td>
+    </tr>
+    <tr>
+      <td>RECEIVE_BOOT_COMPLETED</td>
+      <td>Restauration des préférences au démarrage de l'appareil</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2><span class="num">6</span> Services tiers</h2>
+<p>MangoVision n'intègre aucun SDK publicitaire ou analytique tiers. Les seules requêtes réseau effectuées par l'application sont dirigées vers :</p>
+<ul>
+  <li>Le serveur Xtream Codes configuré par l'utilisateur</li>
+  <li>Les sources M3U renseignées par l'utilisateur</li>
+  <li>Les serveurs EPG configurés par l'utilisateur</li>
+</ul>
+<p>MangoVision utilise la bibliothèque ExoPlayer (Google) pour la lecture multimédia. ExoPlayer fonctionne localement sur l'appareil et ne collecte aucune donnée.</p>
+
+<h2><span class="num">7</span> Sécurité des données</h2>
+<p>Vos identifiants de connexion (URL, login, mot de passe) sont stockés localement sur votre appareil via Android DataStore, dans l'espace de stockage privé de l'application, inaccessible aux autres applications.</p>
+<p>Nous vous recommandons d'utiliser un code PIN ou un verrouillage d'écran sur votre appareil pour protéger l'accès à ces informations.</p>
+
+<h2><span class="num">8</span> Enfants</h2>
+<p>MangoVision n'est pas spécifiquement destiné aux enfants de moins de 13 ans. L'application ne collecte aucune donnée, ce qui la rend conforme aux exigences du RGPD et du COPPA concernant la protection des mineurs.</p>
+
+<h2><span class="num">9</span> Vos droits (RGPD)</h2>
+<p>Dans la mesure où MangoVision ne collecte aucune donnée personnelle, les droits d'accès, de rectification et de suppression prévus par le RGPD s'exercent directement sur votre appareil. Vous pouvez supprimer toutes les données de l'application en procédant à une réinitialisation depuis les paramètres Android (<em>Applications → MangoVision → Effacer les données</em>).</p>
+
+<h2><span class="num">10</span> Modifications de cette politique</h2>
+<p>Toute modification de cette politique de confidentialité sera publiée sur cette page avec une date de mise à jour révisée. En cas de changement significatif, une notification sera affichée dans l'application lors de la prochaine ouverture.</p>
+
+<h2><span class="num">11</span> Contact</h2>
+<div class="contact-box">
+  <p style="margin-bottom:0.5rem;">Pour toute question concernant cette politique de confidentialité :</p>
+  <p style="margin-bottom:0.25rem;"><strong>Application :</strong> MangoVision – Media Player</p>
+  <p style="margin-bottom:0.25rem;"><strong>Développeur :</strong> MangoVision Studio</p>
+  <p style="margin-bottom:0;"><strong>Email :</strong> <a href="mailto:mangovision30640@gmail.com">mangovision30640@gmail.com</a></p>
+</div>
+
+<footer>
+  <p>© 2026 MangoVision. Tous droits réservés.</p>
+  <p style="margin-top:4px;">Cette politique de confidentialité est conforme au Règlement Général sur la Protection des Données (RGPD) et aux exigences de l'Amazon Appstore.</p>
+</footer>
+
+</body>
+</html>
