@@ -1,330 +1,159 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Politique de Confidentialité – MangoVision</title>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  
-  :root {
-    --bg-dark: #0F0F11;
-    --bg-card: #1A1A1F;
-    --bg-surface: #2A2A30;
-    --peach: #FF8A00;
-    --purple: #A040FF;
-    --text: #FFFFFF;
-    --text-muted: #8B8B95;
-    --border: #3A3A40;
-  }
+Visual Studio Code 1.129
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.75;
-    color: var(--text);
-    background: var(--bg-dark);
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 2rem 1.5rem 4rem;
-  }
+Show release notes after an update
 
-  header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--border);
-    margin-bottom: 2rem;
-  }
+Follow us on LinkedIn, X, Bluesky | View online
 
-  .logo {
-    width: 52px; height: 52px;
-    background: linear-gradient(135deg, var(--peach), var(--purple));
-    border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 28px;
-  }
+Release date: July 15, 2026
 
-  h1 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.2;
-  }
+Update 1.129.1: The update addresses these issues.
 
-  header p {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-top: 2px;
-  }
+Welcome to the 1.129 release of Visual Studio Code. This release brings a dedicated agent host, a new editor panel in the Agents window, running commands with !, and a preview of the modern UI.
 
-  .highlight-box {
-    background: rgba(255, 138, 0, 0.1);
-    border: 1px solid rgba(255, 138, 0, 0.3);
-    border-left: 4px solid var(--peach);
-    border-radius: 8px;
-    padding: 1rem 1.25rem;
-    margin-bottom: 2rem;
-    font-size: 0.95rem;
-    color: var(--peach);
-  }
+The agent host: Run agent sessions in a dedicated process and connect to them from multiple windows.
 
-  h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text);
-    margin-top: 2.5rem;
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.3rem;
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
+New editor panel in the Agents window (Experimental): Review agent-generated files and diffs in a docked editor.
 
-  h2 .num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px; height: 24px;
-    background: var(--peach);
-    color: var(--bg-dark);
-    border-radius: 50%;
-    font-size: 0.75rem;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
+Run commands with ! prefix: Run terminal commands directly from chat prompts.
 
-  p { margin-bottom: 0.75rem; color: var(--text-muted); }
+Modern UI preview (Experimental): Get a first look at the updated VS Code workbench appearance.
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 0.75rem;
-  }
+Happy Coding!
 
-  ul li {
-    color: var(--text-muted);
-    padding: 0.2rem 0 0.2rem 1.4rem;
-    position: relative;
-  }
+VS Code is rolling out gradually to all users. Use Check for Updates in VS Code to get the latest version immediately.
 
-  ul li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--peach);
-    font-weight: 700;
-    font-size: 0.85rem;
-  }
+To try new features as soon as possible, download the nightly Insiders build, which includes the latest updates as soon as they are available.
 
-  ul.cross li::before { content: '✗'; color: #FF4444; }
+In this update
+Agents
+Chat
+Editor experience
+Authentication
+Proposed APIs
+Thank you
+Agents
+The agent host
+We're rearchitecting how agent sessions work in VS Code around the agent host - a dedicated process that runs agent harnesses such as Copilot, Claude, and Codex, based on the Agent Host Protocol (AHP). Because a session lives in its own process, the same session can be connected to and rendered from multiple VS Code windows at once. The agent host's Copilot agent is powered by the Copilot SDK, which means that its behavior and functionality is aligned with the Copilot CLI, the standalone GitHub Copilot app, and other Copilot products.
 
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0.75rem 0 1rem;
-    font-size: 0.9rem;
-  }
+Learn more about the VS Code Agent Host architecture.
 
-  .data-table th {
-    background: var(--bg-surface);
-    color: var(--text);
-    text-align: left;
-    padding: 0.6rem 0.85rem;
-    font-weight: 600;
-    font-size: 0.82rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-  }
+We're actively developing the agent host and starting to roll it out to users in both the editor window and the Agents window. To opt in, enable   chat.agentHost.enabled and then pick an agent host harness from the harness dropdown. The screenshot below shows how to select the Copilot harness on the agent host in the editor window:
 
-  .data-table td {
-    padding: 0.6rem 0.85rem;
-    color: var(--text-muted);
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
+Screenshot showing the harness dropdown in the editor window.
 
-  .data-table tr:last-child td { border-bottom: none; }
+As we continue to invest in the agent host, some new features in these release notes may only be available when an agent runs on it. Those features link back to this section and, where relevant, note any additional settings that enable them (for example,   chat.agents.claude.preferAgentHost to enable the Claude agent on the agent host).
 
-  .badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    padding: 1px 7px;
-    border-radius: 20px;
-    font-weight: 600;
-    vertical-align: middle;
-  }
+New editor panel in the Agents window (Experimental)
+The Agents window shows your conversation with an agent next to a detail area for the files and changes it produces. This release introduces a redesigned editor panel that brings the editor and the detail area together into one docked pane with a shared tab bar, so reviewing an agent's work feels like working in the main editor instead of switching between separate panels.
 
-  .badge-green { background: rgba(255, 138, 0, 0.15); color: var(--peach); }
-  .badge-gray { background: var(--bg-surface); color: var(--text-muted); }
+With the new editor panel, you can:
 
-  .contact-box {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.25rem 1.5rem;
-    margin-top: 2rem;
-  }
+Open files and diffs directly inside the docked editor, next to your chat, and add tabs with a New Tab action that matches the chat tab strip.
+Review changes in the Changes view with an improved diff experience: toggle between inline and side-by-side views, expand or collapse all files at once, and read changes in a more compact diff representation that fits more of the change on screen. The next action, such as Create Pull Request, is available right from the editor tab title, and editor keybindings like toggling the diff view work the same as they do in the main VS Code window.
+Pick up where you left off. Each session restores its side-pane width, open editors, active editor, and per-file collapsed state across session switches and window reloads.
+This is an experimental, opt-in layout. To try it, enable sessions.layout.singlePaneDetailPanel and reload the window, since the setting is read once at startup.
 
-  .contact-box a { color: var(--peach); font-weight: 600; }
 
-  footer {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    text-align: center;
-  }
+Session-management tools for Agent Host sessions
+Agents running on the agent host (Copilot, Claude, and Codex) now have access to a suite of session-management tools, so an agent can enumerate, create, observe, and act on other sessions and chats without you needing to switch away from your current conversation.
 
-  @media (max-width: 600px) {
-    body { padding: 1.25rem 1rem 3rem; }
-    h1 { font-size: 1.2rem; }
-    .data-table { font-size: 0.8rem; }
-  }
-</style>
-</head>
-<body>
+With these tools, an agent can:
 
-<header>
-  <div class="logo">🥭</div>
-  <div>
-    <h1>Politique de Confidentialité</h1>
-    <p>MangoVision – Media Player · Dernière mise à jour : 20 juillet 2026</p>
-  </div>
-</header>
+List your sessions with their status, workspace, and changes, so it can find the right one to act on. Archived sessions are excluded unless explicitly requested.
+Read another session's recent conversation to understand what it's doing.
+Create a new session or a new chat within an existing session to hand off a sub-task, rather than overloading a single conversation with unrelated work.
+Send a message to a session or chat it created, to kick off or steer that work.
+Whenever a tool creates or targets a session, VS Code renders an Open Session pill so you can jump straight to it. Sending a message to another session always asks for your confirmation first. An agent can't message its own chat, and a burst of sends is capped so a single request can't fan out into an unbounded number of sessions.
 
-<div class="highlight-box">
-  <strong>En résumé :</strong> MangoVision est un lecteur multimédia. Nous ne collectons, ne stockons, ni ne partageons aucune donnée personnelle sur nos serveurs. Toutes vos informations de connexion restent exclusivement sur votre appareil.
-</div>
 
-<h2><span class="num">1</span> Qui sommes-nous</h2>
-<p>MangoVision est une application Android TV développée et maintenue par un développeur indépendant. L'application est un lecteur multimédia permettant à ses utilisateurs de se connecter à leurs propres services de streaming via les protocoles Xtream Codes et M3U.</p>
-<p>MangoVision ne fournit aucun contenu, aucune chaîne de télévision et aucun service de streaming. L'utilisateur est seul responsable des abonnements auxquels il se connecte.</p>
+Agents window improvements
+This release includes several smaller improvements to the Agents window new-session flow:
 
-<h2><span class="num">2</span> Données collectées</h2>
-<p>MangoVision <strong>ne collecte aucune donnée personnelle</strong>. Nous n'utilisons ni serveurs d'analyse, ni traqueurs publicitaires, ni outils de télémétrie.</p>
+Remembered new-session defaults: the new-session picker remembers your last agent mode and approvals choices and uses them as the defaults the next time you create a session, so you don't have to reselect the same options for every task.
+Worktree checkbox: instead of choosing between folder and worktree isolation from a dropdown, the new-session configuration shows a single New Worktree checkbox. Check it to run the session with Git worktree isolation, which keeps the agent's changes in a separate folder until you're ready to review and merge them, or leave it unchecked to use folder isolation.
+Chat
+Run commands with ! prefix
+You can now prefix chat messages with a ! to run their contents as terminal commands. This works in agent host sessions both in the editor and Agents window.
 
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>Type de données</th>
-      <th>Stockage</th>
-      <th>Partagé avec des tiers</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>URL du serveur, identifiant, mot de passe</td>
-      <td><span class="badge badge-green">Appareil local uniquement</span></td>
-      <td><span class="badge badge-gray">Jamais</span></td>
-    </tr>
-    <tr>
-      <td>Préférences de l'application (catégories, thème, langue)</td>
-      <td><span class="badge badge-green">Appareil local uniquement</span></td>
-      <td><span class="badge badge-gray">Jamais</span></td>
-    </tr>
-    <tr>
-      <td>Positions de reprise de lecture (VOD / Séries)</td>
-      <td><span class="badge badge-green">Appareil local uniquement</span></td>
-      <td><span class="badge badge-gray">Jamais</span></td>
-    </tr>
-    <tr>
-      <td>Données d'utilisation ou statistiques</td>
-      <td colspan="2"><span class="badge badge-gray">Non collectées</span></td>
-    </tr>
-    <tr>
-      <td>Données de localisation</td>
-      <td colspan="2"><span class="badge badge-gray">Non collectées</span></td>
-    </tr>
-    <tr>
-      <td>Identifiants publicitaires</td>
-      <td colspan="2"><span class="badge badge-gray">Non utilisés</span></td>
-    </tr>
-  </tbody>
-</table>
+Screenshot showing running a terminal command from chat with the ! prefix.
 
-<h2><span class="num">3</span> Comment les données sont utilisées</h2>
-<p>Les données saisies dans l'application (URL, identifiant, mot de passe) sont utilisées exclusivement pour :</p>
-<ul>
-  <li>Établir la connexion à votre service de streaming personnel</li>
-  <li>Récupérer la liste des chaînes, films et séries disponibles sur votre abonnement</li>
-  <li>Afficher le guide des programmes (EPG)</li>
-  <li>Mémoriser votre position de lecture pour la reprise automatique</li>
-</ul>
-<p>Ces données ne quittent jamais votre appareil, sauf pour communiquer directement avec le serveur de streaming que <em>vous</em> avez configuré.</p>
+BYOK models with the Copilot agent harness
+You can now use Bring Your Own Key (BYOK) models in the Agents window when you select the Copilot harness running on the agent host.
 
-<h2><span class="num">4</span> Ce que nous ne faisons pas</h2>
-<ul class="cross">
-  <li>Nous ne transmettons aucune donnée à nos serveurs (nous n'en avons pas)</li>
-  <li>Nous ne vendons aucune donnée à des tiers</li>
-  <li>Nous n'affichons pas de publicités</li>
-  <li>Nous ne suivons pas votre comportement de visionnage</li>
-  <li>Nous n'accédons pas à vos contacts, photos ou fichiers</li>
-  <li>Nous n'utilisons pas de cookies</li>
-</ul>
 
-<h2><span class="num">5</span> Permissions requises</h2>
-<p>MangoVision ne demande que les permissions strictement nécessaires à son fonctionnement :</p>
-<table class="data-table">
-  <thead>
-    <tr>
-      <th>Permission</th>
-      <th>Utilisation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>INTERNET</td>
-      <td>Connexion au serveur de streaming configuré par l'utilisateur</td>
-    </tr>
-    <tr>
-      <td>ACCESS_NETWORK_STATE</td>
-      <td>Vérification de la disponibilité du réseau avant lecture</td>
-    </tr>
-    <tr>
-      <td>RECEIVE_BOOT_COMPLETED</td>
-      <td>Restauration des préférences au démarrage de l'appareil</td>
-    </tr>
-  </tbody>
-</table>
+Migrate prompt files to skills (Experimental)
+Prompt files (*.prompt.md) are used to describe custom slash commands. They are only supported in the Local agent harness while other harnesses express slash commands with skills. For compatibility across harnesses, we recommend to migrate all prompt files to skills.
 
-<h2><span class="num">6</span> Services tiers</h2>
-<p>MangoVision n'intègre aucun SDK publicitaire ou analytique tiers. Les seules requêtes réseau effectuées par l'application sont dirigées vers :</p>
-<ul>
-  <li>Le serveur Xtream Codes configuré par l'utilisateur</li>
-  <li>Les sources M3U renseignées par l'utilisateur</li>
-  <li>Les serveurs EPG configurés par l'utilisateur</li>
-</ul>
-<p>MangoVision utilise la bibliothèque ExoPlayer (Google) pour la lecture multimédia. ExoPlayer fonctionne localement sur l'appareil et ne collecte aucune donnée.</p>
+With   chat.customizations.promptMigration.enabled enabled, if you select a harness running on the the agent host and you have migratable prompt files, you'll now see a 'Migrate Prompts' entry in the AI Customizations overview.
 
-<h2><span class="num">7</span> Sécurité des données</h2>
-<p>Vos identifiants de connexion (URL, login, mot de passe) sont stockés localement sur votre appareil via Android DataStore, dans l'espace de stockage privé de l'application, inaccessible aux autres applications.</p>
-<p>Nous vous recommandons d'utiliser un code PIN ou un verrouillage d'écran sur votre appareil pour protéger l'accès à ces informations.</p>
+The migration interface lets you:
 
-<h2><span class="num">8</span> Enfants</h2>
-<p>MangoVision n'est pas spécifiquement destiné aux enfants de moins de 13 ans. L'application ne collecte aucune donnée, ce qui la rend conforme aux exigences du RGPD et du COPPA concernant la protection des mineurs.</p>
+View prompt files from both workspace (.github/prompts/) and user data locations.
+Migrate selected files to skills and open the newly created skills.
+migrate prompt files
 
-<h2><span class="num">9</span> Vos droits (RGPD)</h2>
-<p>Dans la mesure où MangoVision ne collecte aucune donnée personnelle, les droits d'accès, de rectification et de suppression prévus par le RGPD s'exercent directement sur votre appareil. Vous pouvez supprimer toutes les données de l'application en procédant à une réinitialisation depuis les paramètres Android (<em>Applications → MangoVision → Effacer les données</em>).</p>
+Editor experience
+Reopen an editor from the editor toolbar
+When a file or diff supports multiple editors, you can switch editors directly from the editor toolbar. Open the ... menu and select an editor from the Reopen Editor With submenu. This makes alternative editors easier to discover without using the Command Palette.
 
-<h2><span class="num">10</span> Modifications de cette politique</h2>
-<p>Toute modification de cette politique de confidentialité sera publiée sur cette page avec une date de mise à jour révisée. En cas de changement significatif, une notification sera affichée dans l'application lors de la prochaine ouverture.</p>
+Modern UI preview (Experimental)
+Setting:   workbench.experimental.modernUI
 
-<h2><span class="num">11</span> Contact</h2>
-<div class="contact-box">
-  <p style="margin-bottom:0.5rem;">Pour toute question concernant cette politique de confidentialité :</p>
-  <p style="margin-bottom:0.25rem;"><strong>Application :</strong> MangoVision – Media Player</p>
-  <p style="margin-bottom:0.25rem;"><strong>Développeur :</strong> MangoVision Studio</p>
-  <p style="margin-bottom:0;"><strong>Email :</strong> <a href="mailto:mangovision30640@gmail.com">mangovision30640@gmail.com</a></p>
-</div>
+You can now preview a modernized VS Code UI that updates the look and feel of the editor workbench. This is currently an experimental feature that you can enable with the   workbench.experimental.modernUI setting and is enabled by default in Insiders builds.
 
-<footer>
-  <p>© 2026 MangoVision. Tous droits réservés.</p>
-  <p style="margin-top:4px;">Cette politique de confidentialité est conforme au Règlement Général sur la Protection des Données (RGPD) et aux exigences de l'Amazon Appstore.</p>
-</footer>
 
-</body>
-</html>
+Authentication
+GitHub Enterprise support for Copilot in the agent host
+Developers whose GitHub Copilot access is provided through a GitHub Enterprise (GHE) instance can sign in and use Copilot in VS Code. Previously, the agent host's Copilot authentication only supported github.com, so a GHE-backed Copilot subscription could not complete sign-in: both the OAuth flow and the Copilot token request targeted github.com.
+
+With this release, VS Code can authenticate Copilot against a GitHub Enterprise instance. When you sign in to Copilot, choose your GitHub Enterprise instance, and VS Code runs the sign-in flow and requests Copilot access tokens from that host instead of github.com. This works in both the editor window and the Agents window, and with both the Copilot and Claude agents.
+
+Because this support is part of the agent host, ensure the agent host is enabled with   chat.agentHost.enabled .
+
+Proposed APIs
+Configure custom editors for diff and merge editors
+Custom editors now opt out of diff and merge editors by default. As a result, a file can continue to open in a custom editor while its diffs and merges open in the built-in text editors. You might notice this change if you previously saw a custom editor when opening a diff or merge editor.
+
+To open a diff in another editor, use the Reopen Editor With submenu in the editor toolbar. To always use a specific editor for matching diffs, configure the   workbench.diffEditorAssociations setting.
+
+The proposed customEditorPriority API provides separate priorities for files, diffs, and merge editors:
+
+"priority": {
+  "textEditor": "default",
+  "diffEditor": "option",
+  "mergeEditor": "never"
+}
+
+The new never priority prevents automatic selection for that editor type while keeping the editor available for explicit selection.
+
+If the text diff editor cannot display binary content, VS Code still falls back to a compatible custom diff editor.
+
+Thank you
+Contributions to vscode:
+
+@accnops (Arthur Cnops): chat/voice: land voice answers on question carousels (fix Skipped) PR #323161
+@cipheraxat (Akshat Anand): Fix Modern UI editor tab decoration color on full label PR #325291
+@danielrobbins (Daniel Robbins): Fix bugs related to setting the right Chat model. (Fixes Issue #323765) PR #323767
+@dobbydobap (varshitha)
+Fix second Rerun Last Task failing to launch for reevaluateOnRerun tasks PR #324571
+Unstick a pinned tab dragged to the start of the unpinned row PR #324734
+@JeffreyCA: Update Fig spec for Azure Developer CLI (azd) PR #321221
+@Kaidesuyoo (Kaidesuyo): fix persistent workbench UI performance degradation PR #324986
+@myselfsiddharth (Siddharth Mehta): debug: right-align toolbar actions in exception widget PR #325077
+@theanarkh (theanarkh)
+workbench: fix ObjectSettingCheckboxWidget memory leaky PR #323670
+fix: make sure register handler when ipc emitter add listener PR #323663
+@yavanosta (Dmitry Guketlev): Use startColumn in growUntilVariableBoundaries PR #324523
+Issue tracking
+Contributions to our issue tracking:
+
+@gjsjohnmurray (John Murray)
+@RedCMD (RedCMD)
+@IllusionMH (Andrii Dieiev)
+@albertosantini (Alberto Santini)
+@dobbydobap (varshitha)
+@hogiSp (hogiSp)
+We really appreciate people trying our new features as soon as they are ready, so check back here often and learn what's new.
+
+If you'd like to read release notes for previous VS Code versions, go to Updates on code.visualstudio.com.
+
