@@ -6,7 +6,7 @@
 <title>Politique de Confidentialité – MangoVision</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  
+
   :root {
     --bg-dark: #0F0F11;
     --bg-card: #1A1A1F;
@@ -192,7 +192,7 @@
   <div class="logo">🥭</div>
   <div>
     <h1>Politique de Confidentialité</h1>
-    <p>MangoVision – Media Player · Dernière mise à jour : 20 juillet 2026</p>
+    <p>MangoVision – Media Player · Dernière mise à jour : 22 juillet 2026</p>
   </div>
 </header>
 
@@ -227,6 +227,11 @@
       <td><span class="badge badge-gray">Jamais</span></td>
     </tr>
     <tr>
+      <td>Code PIN du contrôle parental</td>
+      <td><span class="badge badge-green">Appareil local uniquement</span></td>
+      <td><span class="badge badge-gray">Jamais</span></td>
+    </tr>
+    <tr>
       <td>Positions de reprise de lecture (VOD / Séries)</td>
       <td><span class="badge badge-green">Appareil local uniquement</span></td>
       <td><span class="badge badge-gray">Jamais</span></td>
@@ -253,6 +258,7 @@
   <li>Récupérer la liste des chaînes, films et séries disponibles sur votre abonnement</li>
   <li>Afficher le guide des programmes (EPG)</li>
   <li>Mémoriser votre position de lecture pour la reprise automatique</li>
+  <li>Activer le contrôle parental et masquer les contenus sensibles</li>
 </ul>
 <p>Ces données ne quittent jamais votre appareil, sauf pour communiquer directement avec le serveur de streaming que <em>vous</em> avez configuré.</p>
 
@@ -299,13 +305,15 @@
   <li>Les serveurs EPG configurés par l'utilisateur</li>
 </ul>
 <p>MangoVision utilise la bibliothèque ExoPlayer (Google) pour la lecture multimédia. ExoPlayer fonctionne localement sur l'appareil et ne collecte aucune donnée.</p>
+<p>MangoVision utilise l'API TMDB (The Movie Database) pour afficher les fiches détaillées des films, les biographies d'acteurs et les filmographies. TMDB est une base de données collaborative open source. Lors de la consultation de ces fiches, des requêtes sont envoyées aux serveurs TMDB pour récupérer les informations publiques (titre, synopsis, acteurs). Aucune donnée personnelle de l'utilisateur n'est transmise à TMDB.</p>
 
 <h2><span class="num">7</span> Sécurité des données</h2>
 <p>Vos identifiants de connexion (URL, login, mot de passe) sont stockés localement sur votre appareil via Android DataStore, dans l'espace de stockage privé de l'application, inaccessible aux autres applications.</p>
+<p>Le code PIN du contrôle parental est également stocké localement et chiffré sur votre appareil.</p>
 <p>Nous vous recommandons d'utiliser un code PIN ou un verrouillage d'écran sur votre appareil pour protéger l'accès à ces informations.</p>
 
 <h2><span class="num">8</span> Enfants</h2>
-<p>MangoVision n'est pas spécifiquement destiné aux enfants de moins de 13 ans. L'application ne collecte aucune donnée, ce qui la rend conforme aux exigences du RGPD et du COPPA concernant la protection des mineurs.</p>
+<p>MangoVision n'est pas spécifiquement destiné aux enfants de moins de 13 ans. L'application intègre un contrôle parental permettant de masquer et verrouiller l'accès aux contenus sensibles via un code PIN. L'application ne collecte aucune donnée, ce qui la rend conforme aux exigences du RGPD et du COPPA concernant la protection des mineurs.</p>
 
 <h2><span class="num">9</span> Vos droits (RGPD)</h2>
 <p>Dans la mesure où MangoVision ne collecte aucune donnée personnelle, les droits d'accès, de rectification et de suppression prévus par le RGPD s'exercent directement sur votre appareil. Vous pouvez supprimer toutes les données de l'application en procédant à une réinitialisation depuis les paramètres Android (<em>Applications → MangoVision → Effacer les données</em>).</p>
